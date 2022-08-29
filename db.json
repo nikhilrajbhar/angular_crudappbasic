@@ -1,0 +1,32 @@
+{
+  "productList": [
+    {
+      "productName": "carrot",
+      "category": "Vegetables",
+      "freshness": "Brand New",
+      "price": 20,
+      "comment": "for healthy eye",
+      "date": "2022-08-16T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "productName": "watermelon",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 150,
+      "comment": "tasty and healty",
+      "date": "2022-08-27T18:30:00.000Z",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
