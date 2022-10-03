@@ -5,6 +5,7 @@ import { ApiService } from './service/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { product } from './data-type';
 
 @Component({
   selector: 'app-roott',
@@ -14,7 +15,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class AppComponent implements OnInit {
   title = 'todoapp';
   displayedColumns: string[] = ['productName', 'category', 'date', 'freshness', 'price', 'comment', 'action'];
-  dataSource !: MatTableDataSource<any>;
+  dataSource !: MatTableDataSource<product>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -38,6 +39,7 @@ export class AppComponent implements OnInit {
   getAllProducts() {
     this.api.getProduct().subscribe({
       next: (res) => {
+        console.warn(res);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -82,7 +84,4 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
-
 }

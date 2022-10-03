@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { product } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -8,21 +9,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  postProduct(data: any) {
+  postProduct(data: product) {
     console.log("data===");
     console.log(data);
-    return this.http.post<any>("https://testingproduct.herokuapp.com/productList/",data);
+    return this.http.post<product>("https://testingproduct.herokuapp.com/productList/",data);
   }
   getProduct() {
-    return this.http.get<any>("https://testingproduct.herokuapp.com/productList/");
+    return this.http.get<product[]>("https://testingproduct.herokuapp.com/productList/");
   }
 
-  updateProduct(data:any,_id: number){
-    return this.http.put<any>("https://testingproduct.herokuapp.com/productList/"+_id,data)
+  updateProduct(data:product,_id: number){
+    return this.http.put<product>("https://testingproduct.herokuapp.com/productList/"+_id,data)
   }
 
   
   deleteProduct(_id: number){
-    return this.http.delete<any>("https://testingproduct.herokuapp.com/productList/"+_id);
+    return this.http.delete<product>("https://testingproduct.herokuapp.com/productList/"+_id);
   }
 }
