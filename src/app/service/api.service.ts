@@ -12,18 +12,18 @@ export class ApiService {
   postProduct(data: product) {
     console.log("data===");
     console.log(data);
-    return this.http.post<product>("https://testingproduct.herokuapp.com/productList/",data);
+    return this.http.post<product>("https://producttesting.onrender.com/productList/",data);
   }
   getProduct() {
-    return this.http.get<product[]>("https://testingproduct.herokuapp.com/productList/");
+    return this.http.get<product[]>("https://producttesting.onrender.com/productList/");
   }
 
   updateProduct(data:product,_id: number){
-    return this.http.put<product>("https://testingproduct.herokuapp.com/productList/"+_id,data)
+    return this.http.put<product>("https://producttesting.onrender.com/productList/"+_id,data)
   }
 
   
   deleteProduct(_id: number){
-    return this.http.delete<product>("https://testingproduct.herokuapp.com/productList/"+_id);
+    return this.http.delete<product>("https://producttesting.onrender.com/productList/"+_id);
   }
 }
